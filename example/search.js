@@ -8,6 +8,7 @@ var xml2js = require('xml2js');
 var Spotify = require('../');
 var login = require('../login');
 var superagent = require('superagent');
+var util = require('../lib/util');
 var query = process.argv[2] || 'guitar gently weeps';
 
 Spotify.login(login.username, login.password, function (err, spotify) {
@@ -20,6 +21,8 @@ Spotify.login(login.username, login.password, function (err, spotify) {
     var parser = new xml2js.Parser();
     parser.on('end', function (data) {
       console.log(JSON.stringify(data, null, 2));
+      // This is a hack for some testing.
+      console.log(util.id2uri('track', data.result.tracks[0].track[0].id[0]));
     });
     parser.parseString(xml);
   });
