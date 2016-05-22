@@ -14,7 +14,7 @@
   "devDependencies": {
     "lame": "~1.2.2",
     "xml2js": "~0.4.9",
-    "speaker": "MathijsvVelde/node-speaker",
+    "speaker": "MathijsvVelde/node-speaker"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
